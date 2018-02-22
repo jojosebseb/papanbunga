@@ -5,954 +5,280 @@
 .container{
     width: $mobile-container;
     margin: auto;
-    padding: 0 15px;
+    padding: 0 10px;
 }
-$navbar-height: 91px;
-
-//pallette
-
-body{
-    background: #050f24;
+.mobile-hide{
+    display: none;
 }
+
 //navbar
-.logo{
-    max-width: 130px;
-    img{
-        display: block;
-        width: 100%;
-        // transform: scale(1.1)
-    }
-}
-#indexPopup{
-    position: fixed;
-    background: rgba(0,0,0, 0.65);
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 25455555911;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .title{
-        margin-bottom: 0px;
-        font-size: 14px;
-        text-align: center;
-        opacity: 0.7;
-        img{
-            width: 240px;
-            vertical-align: middle;
-            display: block;
-            margin: auto;
-            transform: scale(1.2);
-        }
-    }
-    .caption{
-        margin-bottom: 20px;
-        font-size: 11px;
-        font-family: $font-main;
-        opacity: 0.65;
-    }
-    .close{
-        position: absolute;
-        top: 0;
-        height: 30px;
-        width: 30px;
-        text-align: center;
-        background: #b12332;
-        right: 0;
-        line-height: 30px;
-        border-radius: 50%;
-        font-size: 26px;
-        cursor: pointer;
-        // font-family: Calibri;
-        transform: rotateZ(45deg);
-    }
-    .content-box{
-        position: relative;
-        width: 95%;
-        background: rgba(0,0,0,1);
-        padding: 40px 0px 80px;
-        color: white;
-        font-family: "GothamBold";
-        text-align: center;
-        font-size: 30px;
-        // text-transform: uppercase;
-        padding-bottom: 20px;
-        border: 2px solid rgba(255, 255, 255, 0.39);
-        border-radius: 10px;
-        box-shadow: 0px 0px 20px 6px rgba(255, 255, 255, 0.17);
-        .featured-game{
-            width: 85%;
-            padding: 5px;
-            border: 1px solid rgba(255,255,255,0.2);
-            margin: 0 auto 40px;
-            position: relative;
-            height: 23vw;
-            overflow: hidden;
-            border-radius: 10px;
-            // cursor: pointer;
-            transition: all .3s ease;
-            opacity: 0.9;
-            img{
-                width: 140vw;
-                display: block;
-                position: absolute;
-                // width: 100%;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-            }
-            .popup-btn{
-                background: #b12332;
-                color: white;
-                display: block;
-                z-index: 55;
-                position: absolute;
-                font-size: 12px;
-                padding: 10px;
-                border-radius: 5px;
-                top: 70%;
-                transform: translateY(-50%);
-                right: -200px;
-                transition: all .3s ease;
-                // opacity: 0.5;
-            }
-        }
-    }
-    .content-box:hover{
-        .featured-game{
-            opacity: 0.5;
-        }
-        .featured-game:hover{
-            opacity: 1;
-            .popup-btn{
-                right: 20px;
-                // opacity: 0.8;
-            }
-            .popup-btn:hover{
-                opacity: 1;
-            }
-        }
-    }
-
-
-
-}
 #navbar{
-    width: 100%;
     position: fixed;
-    // position: relative;
-    top: 0px;
+    top: 0;
+    width: 100%;
     left: 0;
-    z-index: 99;
+    z-index: 155;
     font-family: $font-main;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#b5b5b5+2,000000+35,000000+35 */
-    background: black;
-    color: white;
-    font-size: 15px;
-    .container{
-        padding: 10px 15px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        // width: 1200px;
-        border-bottom: 1px solid #333
-    }
-    ul.nav-ul{
-        display: flex;
-        display: none;
-        >li{
-            padding: 0px 0;
-            padding: 12px 15px;
-            margin: 0 0px;
-            position: relative;
-            transition: all .3s ease;
-            // color: #aaa;
-            >a{
-                height: 100%;
-                display: block;
-                // padding: 0 10px;
-                // margin: 0 10px;
-            }
-        }
-        >li.active{
-            color: #fff;
-        }
-        >li.has-sub{
-            // padding: 0 10px;
-            // margin: 0 10px;
-        }
-        >li.has-sub:after{
-            content: "";
-            width: 6px;
-            height: 6px;
-            border: 2px solid #fff;
-            display: inline-block;
-            margin-left: 5px;
-            transform: rotateZ(45deg);
-            border-left: 0;
-            border-top: 0;
-            top: 14px;
-            transition: all .3s ease;
-            left: 80px;
-            position: absolute;
-        }
-        >li.has-sub.active:after{
-            transform: rotateZ(-135deg);
-            top: 18px;
-        }
-    }
-    ul.nav-ul.active{
+    background: white;
+    border-bottom: 1px solid #eee;
+    .mobile-logo{
         display: block;
-        position: absolute;
-        top: $navbar-height;
-        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+31,1e5799+100 */
-        background: rgb(0,0,0); /* Old browsers */
-        background: -moz-linear-gradient(45deg,  rgba(0,0,0,1) 31%, rgba(30,87,153,1) 100%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(45deg,  rgba(0,0,0,1) 31%,rgba(30,87,153,1) 100%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(45deg,  rgba(0,0,0,1) 31%,rgba(30,87,153,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#1e5799',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-        left: 0;
-        z-index: 55;
-        width: 100%;
     }
-    .product-submenu{
-        padding: 15px 0 0;
-        line-height: 1;
-        margin: auto;
-        .submenu-title{
-            line-height: 80px;
-            display: none;
-        }
-        .submenu-title, .product-module{
-        }
-        .product-module{
-            padding-right: 50px;
-        }
-        .module-title{
-            padding-bottom: 2px;
-            font-family: $font-title;
-        }
-        ul{
-            li{
-                a{
-                    color: #aaa;
-                    display: block;
-                    padding: 0px 0;
-                    padding-left: 10px;
-                    font-size: 14px;
-                    border-left: 1px solid #aaa;
-                    margin: 8px 0px 8px 5px;
-                }
-                a:hover{
-                    color: #fff;
-                    border-left: 1px solid #fff;
-                }
-            }
-        }
+    .logo{
+        width: 150px;
+        display: block;
     }
-    .submenu{
-        width: 100%;
-        left: 0;
-        padding-left: 20px;
-        cursor: initial;
-        // border-top: 1px solid #eee;
+    .nav-ul{
+        padding: 5px 0;
+        display: flex;
+        align-items: center;
+        color: white;
+        letter-spacing: 2px;
+        font-size: 14px;
+        text-transform: uppercase;
+        justify-content: space-around;
         display: none;
-        .submenu-title{
-            width: 235px;
-            padding-right: 50px;
-            text-align: right;
-            font-family: $font-title;
-            font-size: 16px;
-            letter-spacing: 1px;
-            color: #aaa;
+        a{
+            display: block;
+            padding: 10px 10px;
+            margin: 0 20px;
         }
     }
-    .submenu.active{
-        display: block
-    }
-    li#navRegister {
-        background: #4b8dc7;
-    }
-}
-.mobile-handle{
-    width: 27px;
-    .mobile-lines{
-        margin: 5px 0;
-        border: 1px solid white;
-        transition: all .3s ease;
-        position: relative;
-    }
-}
-.mobile-handle.active{
-    #line1{
-        transform: rotateZ(45deg);
-        top: 7px;
-        border:1px solid red;
-    }
-    #line2{
-        opacity: 0;
-    }
-    #line3{
-        transform: rotateZ(-45deg);
-        top: -7px;
-        border:1px solid red;
-    }
-}
-//navbar
-.target-link{
-    text-decoration: underline;
-    color: rgb(69, 181, 196)
 }
 
-//parentContainer
+//navbar
+
+
 #parentContainer{
-    padding-top: $navbar-height;
-    color: white;
     font-family: $font-main;
 }
-h1{
-    padding: 30px 0;
-    font-size: 40px;
+
+#indexLanding{
+    background-image: url('../../img/assets/burned-besar.jpg');
+    min-height: 80vh;
+    background-size: cover;
+    background-position: center bottom;
+    text-align: center;
+    padding: 40vh 0;
+}
+
+.section-title{
     font-family: $font-title;
+    letter-spacing: 6px;
+    font-size: 20px;
+    text-align: center;
+    color: #555;
+}
+
+.title-decor{
     position: relative;
+    top: 4px;
+    max-width: 45px;
+    margin: 0 -9px;
 }
-h1:after{
-    width: 20%;
-    content: "";
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    height: 3px;
-    background: white;
-}
-p{
-    line-height: 1.6;
-    font-size: 15px;
-    padding-bottom: 20px;
-}
-h3{
-    font-size: 21px;
-    font-weight: normal;
-}
-.ul-general{
-    list-style: decimal;
-    padding-left: 20px;
-    li{
-        list-style: disc;
-        opacity: 0.8;
-        padding: 5px 0;
-        font-size: 14px;
-    }
-}
-.ul-general.captioned{
-    .caption{
-        font-size: 16px;
-        color: #fff;
-    }
-    li{
-        font-size: 14px;
-        color: #888;
-    }
+.title-decor.left{
+    transform: rotateY(180deg);
 }
 .section-container{
-
+    padding: 50px 0;
 }
-#indexSlider{
-    background: rgb(24, 64, 153);
-    background-image: url('../../img/slider/main-bg.png');
-    background-size: cover;
-    background-position: center 99%;
-    .arrow-box.next{
-        right: 5%;
-        z-index: 5;
-    }
-    .arrow-box.prev{
-        left: 5%;
-        z-index: 5;
-    }
-    .container{
-        min-height: 400px;
-        position: relative;
-        margin: auto;
-    }
-    .slide-img{
-        position: absolute;
-        bottom: 100px;
-        opacity: 0;
-        transform: translateX(150px);
-    }
-    .img-left{
-        position: absolute;
-        left: 5%;
-        bottom: 35%;
-        transition: all .4s ease 0.2s;
-        width: 60vw;
-        z-index: 5;
-        img{
-            display: block;
-            max-width: 100%;
-        }
-    }
-    .img-right{
-        position: absolute;
-        right: 1%;
-        transition: all .4s ease 0.3s;
-        width: 50vw;
-        img{
-            display: block;
-            max-width: 100%;
-        }
-    }
-    .slick-active{
-        .slide-img{
-            opacity: 1;
-            transform: translateX(0px);
-        }
-    }
-    .banner-btn{
-        font-family: "GothamBold";
-        background: #0c1e38;
-        padding: 12px 10px;
-        margin: 20px auto 0;
-        display: block;
-        width: 150px;
-        text-align: center;
-        text-transform: uppercase;
-        border-radius: 10px;
-        color: white;
-        box-shadow: 0px 0px 7px 3px #b7c071;
-        font-size: 12px;
-    }
+.section-container.grey{
+    background: #f5f5f5;
+    box-shadow: inset 0 0 23px 0 rgba(221,221,221,0.50);
 }
-
-
-#indexSteps{
-    font-family: $font-main;
-    color: white;
-    margin-top: -100px;
-    .container{
-        width: 100%;
-        padding: 0;
-    }
-    #stepSlider{
-        margin: auto;
-    }
-    .arrow-box.next{
-        right: -30px;
-    }
-    .arrow-box.prev{
-        left: -30px;
-    }
-    .step-title{
-        font-family: $font-title;
-        padding: 10px;
-        text-align: center;
-        font-size: 18px;
-        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#90c0eb+0,024d9e+100&0.8+0,0.8+100 */
-        background: -moz-linear-gradient(45deg,  rgba(144,192,235,0.8) 0%, rgba(2,77,158,0.8) 100%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(45deg,  rgba(144,192,235,0.8) 0%,rgba(2,77,158,0.8) 100%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(45deg,  rgba(144,192,235,0.8) 0%,rgba(2,77,158,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc90c0eb', endColorstr='#cc024d9e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
-
-    }
+#indexProductCat{
     .flex{
         display: flex;
-        border-radius: 10px;
-        padding: 0px 0;
+        justify-content: center;
+        padding: 50px 0;
         flex-wrap: wrap;
-
         .flex-module{
-            position: relative;
-            text-align: center;
-            width: 80%;
-            margin: auto;
-            // border-right: 2px solid white;
-            border-radius: 10px;
             display: flex;
             align-items: center;
-            margin: 20px auto;
+            margin: 0 30px;
+            transition: all .3s ease;
         }
-        .step-num{
-            height: 50px;
-            width: 50px;
-            border-radius: 50%;
-            line-height: 50px;
-            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e7fbc+0,024d9e+100 */
-            background: rgb(30,127,188); /* Old browsers */
-            background: -moz-linear-gradient(45deg,  rgba(30,127,188,1) 0%, rgba(2,77,158,1) 100%); /* FF3.6-15 */
-            background: -webkit-linear-gradient(45deg,  rgba(30,127,188,1) 0%,rgba(2,77,158,1) 100%); /* Chrome10-25,Safari5.1-6 */
-            background: linear-gradient(45deg,  rgba(30,127,188,1) 0%,rgba(2,77,158,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e7fbc', endColorstr='#024d9e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
-            margin: auto;
-            font-size: 18px;
-            font-family: $font-title;
+        .flex-module.left{
+            text-align: right;
         }
-        .group{
-            text-align: left;
-            width: 80%;
+        .title{
+            font-family: $font-bold;
+            font-size: 24px;
+            color: #333;
         }
-        .step-caption{
-            font-family: $font-title;
-            padding: 0px 0;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-            font-size: 15px;
+        .view-btn{
+            background: #ddd;
+            text-transform: lowercase;
+            padding: 10px 15px;
+            margin-top: 10px;
+            font-size: 14px;
+            display: inline-block;
         }
-        .step-paragraph{
-            font-size: 11px;
-            opacity: 0.7;
+    }
+    .flex:hover{
+        .flex-module{
+            opacity: 0.6;
+        }
+        .flex-module:hover{
+            opacity: 1;
         }
     }
 }
 
-#indexHighlights{
-    margin: 30px 0;
-    font-family: $font-main;
+#indexFeatured{
     .flex{
         display: flex;
+        justify-content: space-around;
+        padding: 40px 0;
         flex-wrap: wrap;
-    }
-
-    .w60{
-        width: 100%;
-    }
-    .w40{
-        width: 100%;
-    }
-    .flex-part{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    .w50{
-        width: 47%;
-        min-height: 67vw;
-    }
-    .w100{
-        width: 100%;
-        min-height: 130px;
-
     }
     .flex-module{
-        background: #222;
-        padding: 15px;
-        margin-bottom: 25px;
-        transition: all .3s ease;
-        border-radius: 3px;
-        box-shadow: 0px 0px 8px 3px rgba(255,255,255,0.35);
-        background-repeat: no-repeat;
-        overflow: hidden;
+        width: 27%;
         position: relative;
-        background: black;
-        .main-bg{
+        height: 380px;
+        overflow: hidden;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        .tint{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+            transition: all .3s ease;
+        }
+        img{
+            width: 100%;
+            display: block;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 100%;
             transition: all .3s ease;
-            opacity: 0.7;
         }
-        .flex-title{
-            color: white;
-            font-size: 18px;
-            font-family: $font-title;
+        .text{
             position: relative;
-            padding-bottom: 8px;
-            text-transform: uppercase;
-            display: inline-block;
-        }
-        .flex-title:after{
-            content: "";
-            display: block;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 20px;
-            height: 3px;
-            background: white;
-            transition: all .3s ease;
+            z-index: 55;
+            // top: 45%;
+            // left: 50%;
+            // transform: translate(-50%, -50%);
+            color: white;
+            width: 100%;
+            text-align: center;
+            .title{
+                text-transform: uppercase;
+                font-size: 24px;
+                font-family: $font-title;
+                letter-spacing: 5px;
+            }
+            .caption{
+                text-transform: uppercase;
+                font-size: 14px;
+                padding: 5px 0;
+                letter-spacing: 9px;
+
+            }
         }
     }
     .flex-module:hover{
-        background-size: 130%;
-        box-shadow: 0px 0px 8px 5px rgba(255,255,255,0.4);
-        .flex-title:after{
-            width: 40px;
-        }
-        .main-bg{
-            // transform: translate(-50%, -50%) scale(1.1);
-            opacity: 0.95;
-        }
-    }
-}
-
-#indexTopTrans{
-    color: white;
-    font-family: $font-main;
-    color: #eee;
-    .container{
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    }
-    .flex-title{
-        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#90c0eb+0,0a2c51+100&0+0,1+100 */
-        background: -moz-linear-gradient(top,  rgba(144,192,235,0) 0%, rgba(10,44,81,1) 100%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(top,  rgba(144,192,235,0) 0%,rgba(10,44,81,1) 100%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to bottom,  rgba(144,192,235,0) 0%,rgba(10,44,81,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0090c0eb', endColorstr='#0a2c51',GradientType=0 ); /* IE6-9 */
-        border-radius: 10px;
-        text-align: center;
-        width: 100%;
-        padding: 10px 0;
-        margin-bottom: 10px;
-    }
-    .flex-table{
-        padding: 20px;
-        width: 100%;
-        border-radius: 10px;
-        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#90c0eb+0,0a2c51+100&0+0,1+100 */
-        background: -moz-linear-gradient(top,  rgba(144,192,235,0) 0%, rgba(10,44,81,1) 100%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(top,  rgba(144,192,235,0) 0%,rgba(10,44,81,1) 100%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to bottom,  rgba(144,192,235,0) 0%,rgba(10,44,81,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0090c0eb', endColorstr='#0a2c51',GradientType=0 ); /* IE6-9 */
-        font-size: 14px;
-        .group{
-            display: flex;
-            border-bottom: 1px solid red;
-            padding: 10px;
-            justify-content: space-between;
-            color: #ddd;
-        }
-        .table-title{
-            text-align: center;
-            font-family: $font-title;
-            padding: 10px;
-            border-bottom: 2px solid #fff;
-            margin-bottom: 10px;
-        }
-    }
-}
-
-#indexProducts{
-    color: white;
-    font-family: $font-main;
-    margin: 30px 0;
-    .product-flex{
-        // display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    .border{
-        padding: 8px 20px;
-        border-bottom: 3px solid white;
-        display: inline-block;
-    }
-    .flex-title{
-        width: 100%;
-        font-family: $font-title;
-        font-size: 18px;
-        text-align: center;
-        padding: 10px 0;
-    }
-    .product-module{
-        text-align: center;
-        margin: 0 80px;
-        padding: 20px 0;
-        .img-box{
-            height: 100px;
-            display: flex;
-            align-items: center;
-            transform: translateY(50px);
-            opacity: 0;
-            transition: all .3s ease .1s;
-        }
         img{
-            display: block;
-            max-width: 100px;
-            margin: auto;
+            transform: translate(-50%, -50%) scale(1.1);
+            filter: blur(1px)
         }
-        .product-title{
-            padding: 15px 0 5px;
-            font-size: 17px;
-            transform: translateY(50px);
-            opacity: 0;
-            transition: all .3s ease .15s;
-        }
-        .product-paragraph{
-            opacity: 0.7;
-            font-size: 12px;
-            width: 85%;
-            margin: auto;
-            transform: translateY(50px);
-            opacity: 0;
-            transition: all .3s ease .2s;
-        }
-        .product-join{
-            border: 1px solid white;
-            padding: 10px;
-            display: block;
-            width: 80%;
-            margin: 20px auto 0;
-            border-radius: 5px;
-            text-transform: uppercase;
-            font-size: 14px;
-            box-shadow: inset 0px 0px 14px 4px rgba(255,255,255,0.4);
-            transform: translateY(50px);
-            opacity: 0;
-            transition: all .3s ease .25s;
-        }
-    }
-    .product-module.slick-active{
-        *{
-            opacity: 1;
-            transform: translateY(0);
+        .tint{
+            background: rgba(0,0,0,0.2);
         }
     }
 }
-
-#floating-bank{
-    position: fixed;
-    top: 8vh;
-    left: 5vh;
-    padding: 20px;
-    z-index: 100;
-    border-radius: 10px;
-    border: 1px solid rgba(255,255,255,0.8);
-    box-shadow: inset 0px 0px 14px 4px rgba(255,255,255,0.4);
-    background: rgba(0,0,0,0.8);
-    display: none;
-    .bank-container{
-        width: 80px;
-        padding: 20px 0;
-        img{
-            display: block;
-            max-width: 100%;
-            opacity: 0.8;
-        }
-    }
-}
-//parentContainer
-.full-banner{
-    width: 100%;
-}
-#footer{
-    padding: 20px 0 40px;
-    color: white;
-    font-family: $font-main;
-    background: black;
-    text-align: center;
-    border-top: 1px solid red;
-    .bank-belt{
+#whyShop{
+    .flex{
         display: flex;
+        text-align: left;
         justify-content: space-around;
         padding: 20px 0;
         flex-wrap: wrap;
-        .bank-container{
-            position: relative;
-            padding: 20px;
-            width: 50%;
-            cursor: pointer;
-            img{
-                display: block;
-                margin: auto;
-            }
-            .hover-info{
-                position: absolute;
-                display: none;
-                bottom: 100%;
-                width: 100%;
-                left: 50%;
-                transform: translateX(-50%);
-                font-size: 12px;
-                background: black;
-                padding: 10px 15px;
-                border: 1px solid #e8e8e8;
-                border-radius: 10px;
-                line-height: 1.4;
-                color: #aaa;
-                box-shadow: 0px 0px 13px 7px rgba(127, 127, 127, 0.45);
-            }
+    }
+    .flex-module{
+        padding: 20px 20px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img{
+            display: block;
+            margin: auto;
+            max-width: 30%;
         }
-        .bank-container:hover{
-            .hover-info{
-                display: block;
-            }
+        .title{
+            padding: 5px 0 10px;
+            font-family: $font-title;
+            letter-spacing: 4px;
+            font-size: 15px;
         }
-        .belt-title{
-            width: 100%;
-            opacity: 0.5;
-            margin-top: 15px;
-        }
-    }
-    .footer-text{
-        padding: 20px 30px;
-        color: rgba(255,255,255,0.76);
-        font-size: 11px;
-        line-height: 1.5;
-    }
-    .footer-copyright{
-        padding: 30px 0;
-        font-size: 14px;
-        color: rgba(255,255,255,0.86);
-    }
-}
-
-#float-register{
-    position: fixed;
-    bottom: 50px;
-    right: 25px;
-    width: 160px;
-    border: 1px solid rgba(255,255,255,0.8);
-    color: white;
-    text-align: center;
-    font-family: $font-main;
-    display: none;
-    border-radius: 5px;
-    overflow: hidden;
-    .member-value{
-        box-shadow: inset 0px 0px 20px 4px rgba(255,255,255,0.5);
-        font-size: 18px;
-        font-family: $font-title;
-        padding: 15px 0;
-        background: black;
-        .member-caption{
-            font-size: 11px;
-            font-family: $font-main;
-            padding-top: 10px;
-        }
-    }
-    .register-float-btn{
-        cursor: pointer;
-        padding: 10px;
-        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#61d304+0,c8ef04+100 */
-        background: rgb(97,211,4); /* Old browsers */
-        background: -moz-linear-gradient(45deg,  rgba(97,211,4,1) 0%, rgba(200,239,4,1) 100%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(45deg,  rgba(97,211,4,1) 0%,rgba(200,239,4,1) 100%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(45deg,  rgba(97,211,4,1) 0%,rgba(200,239,4,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#61d304', endColorstr='#c8ef04',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-        font-size: 15px;
-        color: black;
-    }
-}
-#liveScore{
-    padding: 20px 0;
-    #liveIframe{
-        height: 90vh;
-
-    }
-}
-#promoPage{
-    padding-top: 30px;
-    .container{
-        position: relative;
-    }
-    .stealth{
-        position: absolute;
-        top: 0;
-        right: 0;
-        opacity: 0.3;
-        filter: grayscale(1);
-        max-width: 35%;
-    }
-    .promo-group{
-        margin-bottom: 40px;
-        margin-top: 10px;
-        padding: 30px;
-        border-radius: 15px;
-        box-shadow: inset 0px 0px 20px 7px rgba(255, 255, 255, 0.22);
-    }
-    ol{
-        padding-top: 10px;
-        li{
+        .caption{
+            opacity: 0.8;
+            font-size: 13px;
+            font-family: $font-light;
             line-height: 1.5;
         }
+        .group{
+            padding-left: 20px;
+        }
     }
 }
-
-#formRegister{
-    margin: 10vh auto;
-    .form-title{
-        text-align: center;
-        font-family: $font-title;
-        font-size: 18px;
-        padding: 20px 0;
-    }
-    .form-caption{
-        text-align: center;
-        font-size: 13px;
-        padding-bottom: 30px;
-        opacity: 0.8;
-    }
-    .form-btn{
-        margin: 20px auto 0;
-        display: block;
-        padding: 10px 30px;
-        color: black;
-        cursor: pointer;
-    }
-}
-.form-group{
-    display: flex;
-    align-items: center;
-    padding: 5px 0;
-    .caption{
-        width: 150px;
-        font-size: 13px;
-        text-align: right;
-        padding-right: 10px;
-    }
-    .caption:after{
-        content: ":"
-    }
-    .full-input{
-        width: 200px;
-        color: black;
-        padding: 5px;
-        font-size: 14px;
-    }
-}
-
-.contact-parent {
-    z-index: 155;
-    margin: auto;
-    display: flex;
-    top: 0;
-    left: 0;
-    color: white;
-    background: #2d7cb5;
-    padding: 7px 0;
-    width: 100%;
-    justify-content: space-around;
-    .flex-con{
+#indexBestSeller{
+    .flex{
         display: flex;
-        justify-content: space-around;
-        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-top: 40px;
+        .flex-module{
+            width: 70%;
+            border: 1px solid #ddd;
+            background: white;
+            margin-bottom: 15px;
+            cursor: pointer;
+            box-shadow: 0px 6px 14px -3px rgba(0,0,0,0.3);
+            transition: all .3s ease;
+            img{
+                width: 100%;
+                display: block;
+            }
+            .bottom{
+                padding: 15px 6px;
+                font-size: 14px;
+                .product-name{
+                    font-family: $font-bold;
+                    font-size: 15px;
+                    color: #333;
+                }
+                .price{
+                    padding-top: 10px;
+                    font-family: $font-bold;
+                    font-size: 12px;
+                    .range{
+                        font-size: 15px;
+                    }
+                }
+                .desc{
+                    padding-top: 10px;
+                    font-family: $font-num;
+                    font-size: 12px;
+                    opacity: 0.7;
+                }
+            }
+        }
+        .flex-module:hover{
+            transform: translateY(-5px);
+            box-shadow: 0px 15px 20px -7px rgba(0,0,0,0.3);
+        }
     }
 }
-.contact-container{
-    display: flex;
-    align-items: center;
-    font-family: $font-main;
-    img{
-        width: 22px;
-        display: block;
-        margin-right: 5px;
-        border: 1px solid rgba(170, 170, 170, 0.38);
-        border-radius: 50%;
-    }
-    .contact-title{
-        font-family: $font-title;
-        font-size: 12px;
-        opacity: 0.5;
-        display: none;
-    }
-    .contact-caption{
-        font-size: 12px;
-    }
+#footer{
+    background: #f5f5f5;
+    padding: 40px 0;
+    border-top: 3px solid #aaa;
 }
