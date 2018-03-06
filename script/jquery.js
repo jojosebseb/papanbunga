@@ -12,130 +12,66 @@ $('#indexSlider > .slide-container').slick({
     autoplaySpeed: 2000,
 });
 
-$('#navbar .has-sub').on('click', function(){
-    $(this).toggleClass('active');
-    $(this).find('.submenu').fadeToggle(300);
-});
-
-$('#indexProdSlide').slick({
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 4,
-  slidesToScroll: 4,
-
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        infinite: true,
-        dots: true
-      }
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        arrows: true,
-        nextArrow: arrowNext,
-        prevArrow: arrowPrev,
-        slidesToShow: 2,
-          fade: true,
-        slidesToScroll: 2
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-          fade: true,
-        arrows: true,
-        dots: false,
-        nextArrow: arrowNextWhite,
-        prevArrow: arrowPrevWhite,
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
+$('.slide#productList').find('.flex').slick({
+    slidesToShow: 4,
+    nextArrow: arrowNext,
+    prevArrow: arrowPrev,
+    responsive: [
+  {
+    breakpoint: 1024,
+    settings: {
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      infinite: true,
+      dots: true
     }
-    // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
-  ]
+  },
+  {
+    breakpoint: 600,
+    settings: {
+      slidesToShow: 2,
+      slidesToScroll: 2
+    }
+  },
+  {
+    breakpoint: 480,
+    settings: {
+        arrows: false,
+      slidesToShow: 2,
+      slidesToScroll: 2
+    }
+  }
+  // You can unslick at a given breakpoint now by adding:
+  // settings: "unslick"
+  // instead of a settings object
+]
 });
 
-// $('#stepSlider').slick({
-//   dots: true,
-//   infinite: false,
-//   speed: 300,
-//   slidesToShow: 4,
-//   slidesToScroll: 4,
-//
-//   responsive: [
-//     {
-//       breakpoint: 1024,
-//       settings: {
-//         slidesToShow: 3,
-//         slidesToScroll: 3,
-//         infinite: true,
-//         dots: true
-//       }
-//     },
-//     {
-//       breakpoint: 600,
-//       settings: {
-//         arrows: true,
-//         nextArrow: arrowNext,
-//         prevArrow: arrowPrev,
-//         slidesToShow: 2,
-//         slidesToScroll: 2,
-//           fade: true,
-//       }
-//     },
-//     {
-//       breakpoint: 480,
-//       settings: {
-//         arrows: true,
-//         dots: false,
-//         fade: true,
-//         nextArrow: arrowNextWhite,
-//         prevArrow: arrowPrevWhite,
-//         slidesToShow: 1,
-//         slidesToScroll: 1
-//       }
-//     }
-//     // You can unslick at a given breakpoint now by adding:
-//     // settings: "unslick"
-//     // instead of a settings object
-//   ]
-// });
+var src;
+$('.product-gallery .product-slide').on('click', function(){
+    $('.product-gallery .product-slide').removeClass('active');
+    $(this).addClass('active');
+    src = $(this).find('img').attr('src');
+    $('.product-thumb').find('img').attr('src', src);
+
+})
+
+$('.product-gallery').slick({
+    slidesToShow: 8,
+    nextArrow: arrowNext,
+    prevArrow: arrowPrev,
+
+});
+
+$('.inquiry-button').on('click', function(){
+    $('.product-enquiry').toggleClass('active');
+});
+
+$('.minimize').on('click', function(){
+    $('.product-enquiry').removeClass('active');
+});
 
 $('.mobile-handle').on('click', function(){
     $(this).toggleClass('active');
-    $('.nav-ul').toggleClass('active');
-})
-
-$('#indexPopupClose').on('click', function(){
-    $('#indexPopup').hide();
-    $('#stepSlider .flex-module').each(function(i){
-        $(this).css({
-            'transition': 'all .3s ease ' + i/10+'s',
-            'opacity': 1,
-            'right': 0
-        });
-    });
-    $('#stepSlider').css({
-        'border': '2px solid #99C0F5',
-        'box-shadow': '0px 0px 4px 2px rgba(255,255,255,0.4)'
-    })
-
-})
-
-$( document ).ready(function(){
-    $('#indexPopup').addClass('show');
-    $('#indexPopup > .content-box *').each(function(i){
-        $(this).css({
-            'transition': 'all .3s ease '+ i/20+'s'
-        });
-    });
-
+    $('.nav-ul').slideToggle();
 });

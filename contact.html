@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="">
+    <meta name='description' content='' />
+    <title>papanbunga.com</title>
+
+
+    <!-- plugin css start -->
+        <link rel="stylesheet" type="text/css" media="" href="plugs/slick-1.6.0.css" />
+    <!-- plugin css end   -->
+
+    <!-- local css start -->
+        <link rel="stylesheet" type="text/css" media="screen and (min-width: 1050px)" href="styles/css/main_desktop.min.css" />
+        <link rel="stylesheet" type="text/css" media="screen and (max-width: 1049px)" href="styles/css/main_mobile.min.css" />
+    <!-- local css end   -->
+
+</head>
+<body>
+    <div id="navbar">
+        <div class="container">
+
+            <a href="#" class="logo">
+                <img src="img/assets/logo.png" alt="">
+            </a>
+
+
+            <ul class="nav-ul">
+                <li><a href="#">Home</a></li>
+                <li class="active"><a href="#">Our Products</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+            <div class="mobile-handle">
+                <div class="mobile-line" id="line1"></div>
+                <div class="mobile-line" id="line2"></div>
+                <div class="mobile-line" id="line3"></div>
+            </div>
+        </div>
+    </div>
+    <div id="parentContainer">
+
+        <section class="section-container" id="contactSection">
+            <div class="container">
+                <div class="contact-form-parent">
+                    <form action="" class="contact-form">
+                        <div class="form-title">
+                            Inquiry Form
+                        </div>
+                        <div class="form-group w50">
+                            <div class="caption">First Name</div>
+                            <input type="text" class="full-input">
+                        </div>
+                        <div class="form-group w50">
+                            <div class="caption">Last Name</div>
+                            <input type="text" class="full-input">
+                        </div>
+                        <div class="form-group w50">
+                            <div class="caption">Email Name</div>
+                            <input type="text" class="full-input">
+                        </div>
+                        <div class="form-group w50">
+                            <div class="caption">Contact Number</div>
+                            <input type="text" class="full-input">
+                        </div>
+                        <div class="form-group">
+                            <div class="caption">Subject</div>
+                            <input type="text" class="full-input" placeholder="'Product Name'">
+                        </div>
+                        <div class="form-group">
+                            <div class="caption">Message</div>
+                            <textarea name="" id="" class="full-input" placeholder="Halo, saya mau tanya mengenai 'Product Name' lebih lanjut!"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="SEND" value="SEND" class="full-btn">
+                        </div>
+                    </form>
+                </div>
+                <div class="contact-detail" id="gMaps">
+
+                </div>
+            </div>
+        </section>
+
+        <section class="section-container" id="mapsSection">
+            <!-- <div class="container" id="gMaps">
+
+            </div> -->
+
+        </section>
+    </div>
+
+    <div id="footer">
+        <div class="container">
+            <div class="flex-module">
+                <div class="flex-title">Our Store</div>
+                <div class="paragraph">
+                    <div class="pgroup">
+                        Address: Jl Pluit Cbd no 45,
+                        14560, Jakarta Utara
+                    </div>
+                    <div class="pgroup">
+                        Contact: 0812381238
+                    </div>
+                    <div class="pgroup">
+                        Email : cspapanbunga@gmail.com
+                    </div>
+                </div>
+            </div>
+            <div class="flex-module">
+                <div class="flex-title">Opening Hours</div>
+                <div class="paragraph">
+                    <div class="pgroup">
+                        Mon - Fri : 09:00 - 14:00
+                    </div>
+                    <div class="pgroup">
+                        Sat: 11:00 - 14:00
+                    </div>
+                    <div class="pgroup">
+                        Sun: Closed.
+                    </div>
+                </div>
+            </div>
+            <div class="flex-module">
+                <div class="flex-title">Contact</div>
+                <div class="paragraph">
+                    Address: Jl Pluit Cbd no 45, 14560, Jakarta Utara
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+    <script>
+        function initMap() {
+            var ppb = {lat: -6.127704, lng: 106.801485};
+            var map = new google.maps.Map(document.getElementById('gMaps'), {
+                zoom: 18,
+                center: ppb
+            });
+            var marker = new google.maps.Marker({
+                position: ppb,
+                map: map
+        });
+    }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBB0AyT8VcStNjAvo4QqX-io_2lVq9so8E&callback=initMap">
+    </script>
+    <!-- plugin js start -->
+        <script type="text/javascript" src="plugs/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="plugs/slick-1.6.0.min.js"></script>
+    <!-- plugin js end   -->
+
+    <!-- local js start -->
+        <script type="text/javascript" src="script/jquery.js"></script>
+    <!-- local js end   -->
+</html>

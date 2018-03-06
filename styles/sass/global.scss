@@ -26,6 +26,14 @@ a{
     font-family: "CocoDemi";
     src: url('../../fonts/coco-demi.ttf');
 }
+@font-face {
+    font-family: "BrandonReg";
+    src: url('../../fonts/Brandon_reg.otf');
+}
+@font-face {
+    font-family: "BrandonBold";
+    src: url('../../fonts/Brandon_bld.otf');
+}
 
 
 //pallete
@@ -35,7 +43,10 @@ $font-bold: "GothamBold";
 
 $font-main: "CocoDemi";
 $font-paragraph: "CocoDemi";
-$font-title: "CocoDemi";
+$font-title: "BrandonBold";
+
+$font-brandon: "BrandonReg";
+$font-brandonbold: "BrandonBold";
 
 $container-width: 1100px;
 $mobile-container: 100%;
